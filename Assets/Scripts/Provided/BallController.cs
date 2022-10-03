@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Ball : MonoBehaviour
+public class BallController : MonoBehaviour
 {
     // Ball components
     private Rigidbody2D rb;
