@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuActions : MonoBehaviour
 {
+    public void PauseGameUpdate()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGameUpdate()
+    {
+        Time.timeScale = 1;
+    }
+
     public void ReloadCurrentLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

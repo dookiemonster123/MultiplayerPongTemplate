@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Ball : MonoBehaviour
+public class BallController : MonoBehaviour
 {
     // Ball components
     private Rigidbody2D rb;
@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
         startPosition = transform.position;
     }
 
-    private void OnEnable()
+    public void Reset()
     {
         transform.position = startPosition;
         rb.velocity = Vector2.zero;

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Paddle : MonoBehaviour
+public class PaddleController : MonoBehaviour
 {
     // Paddle components
     private Rigidbody2D rb;
@@ -20,7 +20,7 @@ public class Paddle : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void Reset()
     {
         transform.position = startPosition;
     }
