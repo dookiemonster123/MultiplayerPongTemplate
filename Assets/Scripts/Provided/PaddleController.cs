@@ -20,7 +20,7 @@ public class PaddleController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    public void Reset()
     {
         transform.position = startPosition;
     }

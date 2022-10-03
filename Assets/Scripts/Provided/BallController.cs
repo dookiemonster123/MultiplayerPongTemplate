@@ -15,7 +15,7 @@ public class BallController : MonoBehaviour
         startPosition = transform.position;
     }
 
-    private void OnEnable()
+    public void Reset()
     {
         transform.position = startPosition;
         rb.velocity = Vector2.zero;
