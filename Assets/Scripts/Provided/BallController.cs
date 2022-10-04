@@ -31,7 +31,7 @@ public class BallController : MonoBehaviour
     {
         // launchRight ? 1 : -1 means if launchRight is true then use 1 else use -1
         Vector2 direction = new Vector2(launchRight ? 1 : -1,
-                                        Random.Range(-100f, 100f)
+                                        Random.Range(-2f, 2f)
                                        ).normalized;
         rb.velocity = direction * speed;
     }

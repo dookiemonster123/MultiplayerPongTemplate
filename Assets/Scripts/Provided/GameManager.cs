@@ -32,17 +32,20 @@ public class GameManager : MonoBehaviour
         {
             paddles = FindObjectsOfType<PaddleController>();
         }
+        Reset();
+        // Launch ball in random direction
+        LaunchAll(Random.Range(0, 2) == 1);
     }
 
     public void Reset()
     {
-        foreach (BallController ball in balls)
-        {
-            ball.Reset();
-        }
         foreach (PaddleController paddle in paddles)
         {
             paddle.Reset();
+        }
+        foreach (BallController ball in balls)
+        {
+            ball.Reset();
         }
     }
 
@@ -77,12 +80,22 @@ public class GameManager : MonoBehaviour
         if (useFirstGetToScoreGoal && (player1Score >= scoreToReach || player2Score >= scoreToReach))
         {
             DetermineWinner();
+            return;
         }
         else
         {
             Reset();
         }
 
+        LaunchAll(isPlayerOne);
+    }
+
+    private void LaunchAll(bool isPlayerOne)
+    {
+        foreach (BallController ball in balls)
+        {
+            ball.LaunchBall(isPlayerOne);
+        }
     }
 
     public void DetermineWinner()
