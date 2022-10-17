@@ -7,9 +7,10 @@ public class PaddleController : MonoBehaviour
     private Rigidbody2D rb;
 
     [Header("Paddle Attributes")]
-    [SerializeField] float speed;
+    [SerializeField] float speed = 1;
     [SerializeField] Vector3 startPosition = Vector3.zero;
 
+    private float movementDirection = 0;
 
     private void Awake()
     {
@@ -27,12 +28,7 @@ public class PaddleController : MonoBehaviour
 
     private void Update()
     {
-
-    }
-
-    public void UpdateMovement(bool moveUp = true)
-    {
-        Vector2 direction = moveUp ? Vector2.up : Vector2.down;
-        rb.velocity = direction * speed;
+        Vector2 moveVectorDir = new Vector2(0, movementDirection * speed * Time.deltaTime);
+        rb.MovePosition(rb.position + moveVectorDir);
     }
 }

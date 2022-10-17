@@ -5,8 +5,8 @@ public class GameManager : MonoBehaviour
     private int player1Score = 0;
     private int player2Score = 0;
 
-    [SerializeField] BallController[] balls;
-    [SerializeField] PaddleController[] paddles;
+    [SerializeField] BallController[] balls = new BallController[0];
+    [SerializeField] PaddleController[] paddles = new PaddleController[0];
 
     [SerializeField] bool useFirstGetToScoreGoal = false;
     [SerializeField] int scoreToReach = 10;
@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     private float timeRemaining = -1;
     private float TimeRemaining => timeRemaining;
 
-    public UnityEvent_Int OnPlayerOneGoalTouched = new();
-    public UnityEvent_Int OnPlayerTwoGoalTouched = new();
+    public UnityEvent_Int OnPlayerOneScore = new();
+    public UnityEvent_Int OnPlayerTwoScore = new();
     public UnityEvent_PlayerWin OnGameFinished = new();
 
     private void Start()
@@ -69,12 +69,12 @@ public class GameManager : MonoBehaviour
         if (isPlayerOne)
         {
             player1Score += 1;
-            OnPlayerOneGoalTouched.Invoke(player1Score);
+            OnPlayerOneScore.Invoke(player1Score);
         }
         else
         {
             player2Score += 1;
-            OnPlayerTwoGoalTouched.Invoke(player2Score);
+            OnPlayerTwoScore.Invoke(player2Score);
         }
 
         if (useFirstGetToScoreGoal && (player1Score >= scoreToReach || player2Score >= scoreToReach))

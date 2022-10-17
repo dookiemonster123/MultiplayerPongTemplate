@@ -7,7 +7,7 @@ public class BallController : MonoBehaviour
     private Rigidbody2D rb;
 
     [Header("Ball Attributes")]
-    [SerializeField] float speed;
+    [SerializeField] float speed = 1;
     [SerializeField] Vector3 startPosition = Vector3.zero;
     private void Awake()
     {
@@ -17,6 +17,7 @@ public class BallController : MonoBehaviour
 
     public void Reset()
     {
+        if (rb == null) return;
         transform.position = startPosition;
         rb.velocity = Vector2.zero;
     }
