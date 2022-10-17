@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour
     private float timeRemaining = -1;
     private float TimeRemaining => timeRemaining;
 
-    public UnityEvent_Int OnPlayerOneScore = new();
-    public UnityEvent_Int OnPlayerTwoScore = new();
-    public UnityEvent_PlayerWin OnGameFinished = new();
+    public UnityEvent_Int OnPlayerOneScore = new UnityEvent_Int();
+    public UnityEvent_Int OnPlayerTwoScore = new UnityEvent_Int();
+    public UnityEvent_PlayerWin OnGameFinished = new UnityEvent_PlayerWin();
 
     private void Start()
     {
