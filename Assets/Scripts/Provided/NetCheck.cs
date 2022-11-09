@@ -8,6 +8,9 @@ public class NetCheck : MonoBehaviour
         PrintNetwork();
     }
 
+    public static string HostName() => Dns.GetHostName();
+    public static string IPAddress() => IPAddress(HostName());
+    public static string IPAddress(string hostName) => Dns.GetHostAddresses(hostName)[0].ToString();
     public static void PrintNetwork()
     {
         string hostName = Dns.GetHostName();
