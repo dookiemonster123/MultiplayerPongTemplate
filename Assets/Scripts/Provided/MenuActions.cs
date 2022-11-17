@@ -5,26 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class MenuActions : MonoBehaviour
 {
-    public void PauseGameUpdate()
+    public static void PauseGameUpdate()
     {
         Time.timeScale = 0;
     }
 
-    public void ResumeGameUpdate()
+    public static void ResumeGameUpdate()
     {
         Time.timeScale = 1;
     }
 
-    public void ReloadCurrentLevel()
+    public static void ReloadCurrentLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void LoadLevel(int buildIndex)
+    public static void LoadLevel(int buildIndex)
     {
         SceneManager.LoadScene(buildIndex);
     }
 
-    public void QuitGame()
+    public static void QuitGame()
     {
         // If you are running this script from the Unity Editor,
         // stop the editor to simulate quitting
