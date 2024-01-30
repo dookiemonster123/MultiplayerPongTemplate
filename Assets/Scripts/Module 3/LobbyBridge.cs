@@ -19,7 +19,6 @@ public class LobbyBridge : MonoBehaviour
     [SerializeField] GameObject friendJoinButtonPrefab;
 
     [Header("External References")]
-    // Does not need to be assigned
     [SerializeField] FacepunchTransport fpTransport;
     [SerializeField] NetworkUI networkUI;
 

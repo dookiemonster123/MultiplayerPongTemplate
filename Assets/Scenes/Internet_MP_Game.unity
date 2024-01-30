@@ -665,7 +665,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 669615881}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999976
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2142,6 +2142,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2306,23 +2307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RunInBackground: 1
-  LogLevel: 0
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 811345539}
     PlayerPrefab: {fileID: 0}
-    NetworkPrefabs:
-    - Override: 0
-      Prefab: {fileID: 5238875208379011635, guid: e21b493bc66fb4b96b001153b2f9d8f3, type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
-    - Override: 0
-      Prefab: {fileID: 1418979471655399178, guid: 3eed4c55dc187475693ac9b78528d157, type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
+    Prefabs:
+      NetworkPrefabsLists: []
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -2338,6 +2328,19 @@ MonoBehaviour:
     LoadSceneTimeOut: 120
     SpawnTimeout: 1
     EnableNetworkLogs: 1
+    OldPrefabList:
+    - Override: 0
+      Prefab: {fileID: 5238875208379011635, guid: e21b493bc66fb4b96b001153b2f9d8f3, type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+    - Override: 0
+      Prefab: {fileID: 1418979471655399178, guid: 3eed4c55dc187475693ac9b78528d157, type: 3}
+      SourcePrefabToOverride: {fileID: 0}
+      SourceHashToOverride: 0
+      OverridingTargetPrefab: {fileID: 0}
+  RunInBackground: 1
+  LogLevel: 0
 --- !u!4 &811345538
 Transform:
   m_ObjectHideFlags: 0
@@ -3296,6 +3299,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 3268310860
   AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
 --- !u!4 &1334454764
@@ -3432,8 +3439,8 @@ MonoBehaviour:
   steamIdInput: {fileID: 928834686}
   friendListContentParent: {fileID: 4465001}
   friendJoinButtonPrefab: {fileID: 5235822673357720368, guid: f88a3c3a68db64e7e9ea973120635cc9, type: 3}
-  fpTransport: {fileID: 0}
-  networkUI: {fileID: 0}
+  fpTransport: {fileID: 811345539}
+  networkUI: {fileID: 811345535}
 --- !u!4 &1435902852
 Transform:
   m_ObjectHideFlags: 0
